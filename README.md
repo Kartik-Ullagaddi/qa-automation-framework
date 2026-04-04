@@ -21,19 +21,23 @@ It follows the Page Object Model (POM) design pattern and supports data-driven t
 
 ## Project Structure
 src
- ├── main
- │   ├── java
- │   │   ├── base        → WebDriver setup
- │   │   ├── pages       → Page Object classes
- │   │   ├── utils       → Utilities (Config reader, JSON parser)
- │   └── resources       → Configuration files
- │
- ├── test
- │   ├── java
- │   │   └── tests       → Test classes
- │   └── resources
- │       ├── testdata    → JSON test data
- │       └── testng.xml  → Test suite configuration
+├── main
+│   ├── java
+│   │   ├── base        // WebDriver setup
+│   │   ├── pages       // Page Object classes
+│   │   ├── utils       // Utilities (Config reader, JSON parser)
+│   │
+│   └── resources
+│       └── config.properties   // Configuration file
+│
+├── test
+│   ├── java
+│   │   └── tests       // Test classes
+│   │
+│   └── resources
+│       ├── testdata
+│       │   └── users.json      // Test data
+│       └── testng.xml          // Test suite configuration
 
 ## Test Coverage
 - Valid Login Test
