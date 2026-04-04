@@ -1,4 +1,4 @@
-# Selenium QE Automation Framework
+# Selenium QA Automation Framework
 
 ## Overview
 This project is a scalable test automation framework built using Java, Selenium WebDriver, and TestNG.
