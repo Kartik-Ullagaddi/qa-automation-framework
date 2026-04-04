@@ -1,15 +1,13 @@
 package tests;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.kartik.automation.base.BaseTest;
+import com.kartik.automation.base.Base;
 import com.kartik.automation.pages.LoginPage;
-import com.kartik.automation.utils.ConfigReader;
 import com.kartik.automation.utils.User;
 import com.kartik.automation.utils.UserReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseTest{
+public class ApplicationLogin extends Base {
     // Test methods for login functionality will go here
     @Test
     public void testLoginPageTitleTest() {
