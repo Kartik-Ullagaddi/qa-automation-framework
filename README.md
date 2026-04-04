@@ -20,6 +20,8 @@ It follows the Page Object Model (POM) design pattern and supports data-driven t
 - JSON
 
 ## Project Structure
+
+```
 src
 ├── main
 │   ├── java
@@ -28,7 +30,7 @@ src
 │   │   ├── utils       // Utilities (Config reader, JSON parser)
 │   │
 │   └── resources
-│       └── config.properties   // Configuration file
+│       └── config.properties
 │
 ├── test
 │   ├── java
@@ -36,8 +38,9 @@ src
 │   │
 │   └── resources
 │       ├── testdata
-│       │   └── users.json      // Test data
-│       └── testng.xml          // Test suite configuration
+│       │   └── users.json
+│       └── testng.xml
+```
 
 ## Test Coverage
 - Valid Login Test
