@@ -1,84 +1,58 @@
-# 🚀 Selenium QA Automation Framework
+# Selenium QE Automation Framework
 
-## 📌 Overview
+## Overview
+This project is a scalable test automation framework built using Java, Selenium WebDriver, and TestNG.
+It follows the Page Object Model (POM) design pattern and supports data-driven testing using JSON to ensure maintainability and reusability.
 
-This project is a **Selenium-based automation framework** built using **Java and TestNG**, following the **Page Object Model (POM)** design pattern.
-It supports **data-driven testing using JSON**, configuration management, and includes both **positive and negative test scenarios**.
+## Key Features
+- Page Object Model (POM) for better code organization
+- Data-driven testing using JSON
+- Modular and maintainable framework design
+- Reusable utility components (configuration handling, JSON parsing)
+- TestNG integration for execution and assertions
+- Coverage of both positive and negative scenarios
 
----
+## Tech Stack
+- Java
+- Selenium WebDriver
+- TestNG
+- Maven
+- JSON
 
-## 🔥 Key Highlights
-
-* Designed using **Page Object Model (POM)** for scalability
-* Implemented **data-driven testing using JSON**
-* Automated **positive and negative test scenarios**
-* Integrated **TestNG for test execution and assertions**
-* Built a **maintainable and reusable framework structure**
-
----
-
-## 🛠 Tech Stack
-
-* ☕ Java
-* 🌐 Selenium WebDriver
-* 🧪 TestNG
-* 📦 Maven
-* 📄 JSON (for test data)
-
----
-
-## 📂 Project Structure
-
-```
+## Project Structure
 src
  ├── main
  │   ├── java
  │   │   ├── base        → WebDriver setup
  │   │   ├── pages       → Page Object classes
- │   │   ├── utils       → Config & JSON readers
- │   └── resources       → config.properties
+ │   │   ├── utils       → Utilities (Config reader, JSON parser)
+ │   └── resources       → Configuration files
  │
  ├── test
  │   ├── java
- │   │   └── tests       → Test cases
+ │   │   └── tests       → Test classes
  │   └── resources
- │       ├── users.json  → Test data
- │       └── testng.xml  → Test execution
-```
+ │       ├── testdata    → JSON test data
+ │       └── testng.xml  → Test suite configuration
 
----
+## Test Coverage
+- Valid Login Test
+- Locked User Login Test
 
-## 🧪 Test Scenarios
+## Execution
 
-* ✅ Valid Login Test
-* ❌ Locked User Negative Test
+### Using TestNG
+Run testng.xml from the IDE
 
----
-
-## ▶️ How to Run
-
-### Run using TestNG
-
-* Right-click on `testng.xml` → Run
-
-### Run using Maven
-
-```
+### Using Maven
 mvn clean test
-```
 
----
+## Key Learnings
+- Applied automation framework design principles (POM, modular design)
+- Implemented data-driven testing using JSON
+- Improved test maintainability and reusability
+- Gained hands-on experience with Selenium WebDriver and TestNG
 
-## 📊 Key Learnings
-
-* Implemented **automation framework design principles**
-* Gained hands-on experience with **Selenium and TestNG**
-* Improved understanding of **data-driven testing and assertions**
-* Built reusable and maintainable automation components
-
----
-
-## 👨‍💻 Author
-
-**Kartik Ullagaddi**
-🔗 GitHub: https://github.com/kartik-ullagaddi
+## Author
+Kartik Ullagaddi
+https://github.com/kartik-ullagaddi
