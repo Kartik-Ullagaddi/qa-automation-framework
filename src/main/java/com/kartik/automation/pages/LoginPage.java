@@ -2,14 +2,21 @@ package com.kartik.automation.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
     private final WebDriver driver;
+    private final WebDriverWait wait;
 
     //constructor to initialize the driver
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     // Page Object Model (POM) methods for interacting with the login page will go here
@@ -21,15 +28,18 @@ public class LoginPage {
 
     // Method to perform login action
     public void enterUsername(String username) {
-        driver.findElement(usernameField).sendKeys(username);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(usernameField));
+        element.sendKeys(username);
     }
 
     public void enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(passwordField));
+        element.sendKeys(password);
     }
 
     public void clickLoginButton() {
-        driver.findElement(loginButton).click();
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        element.click();
     }
 
     // Method to perform the complete login action
@@ -41,6 +51,7 @@ public class LoginPage {
 
     //Login failed error msg
     public String getErrorMsg() {
-        return driver.findElement(loginFailedErrorMsg).getText();
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(loginFailedErrorMsg));
+        return element.getText();
     }
 }

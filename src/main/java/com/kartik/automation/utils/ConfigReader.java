@@ -1,7 +1,7 @@
 package com.kartik.automation.utils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigReader {
@@ -11,14 +11,16 @@ public class ConfigReader {
     // Static block to load properties file
     static {
         try {
-            FileInputStream file = new FileInputStream("src/main/resources/config.properties");
+            InputStream input = ConfigReader.class.getClassLoader().getResourceAsStream("config.properties");
             properties = new Properties();
-            // Load the properties file from the classpath
-            properties.load(file);
-            file.close();
+            if (input != null) {
+                properties.load(input);
+                input.close();
+            } else {
+                throw new RuntimeException("config.properties file not found on classpath");
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to load config.properties file");
+            throw new RuntimeException("Failed to load config.properties file", e);
         }
     }
 

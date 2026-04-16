@@ -2,8 +2,8 @@ package com.kartik.automation.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 public class UserReader {
@@ -13,16 +13,23 @@ public class UserReader {
     static {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            users = mapper.readValue(
-                    new File("src/test/resources/users.json"),
-                    mapper.getTypeFactory().constructMapType(Map.class, String.class, User.class)
-            );
+            InputStream is = UserReader.class.getClassLoader().getResourceAsStream("users.json");
+            if (is != null) {
+                users = mapper.readValue(is, mapper.getTypeFactory().constructMapType(Map.class, String.class, User.class));
+                is.close();
+            } else {
+                throw new RuntimeException("users.json file not found on classpath");
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to load users.json file", e);
         }
     }
 
     public static User getUser(String userType) {
-        return users.get(userType);
+        User user = users.get(userType);
+        if (user == null) {
+            throw new RuntimeException("User type '" + userType + "' not found in users.json");
+        }
+        return user;
     }
 }

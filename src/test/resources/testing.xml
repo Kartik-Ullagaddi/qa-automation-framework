@@ -2,6 +2,10 @@
 
 <suite name="Automation Suite">
 
+    <listeners>
+        <listener class-name="com.kartik.automation.utils.TestListener"/>
+    </listeners>
+
     <test name="Login Tests">
         <classes>
             <class name="tests.ApplicationLogin"/>

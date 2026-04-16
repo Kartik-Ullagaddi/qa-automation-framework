@@ -1,13 +1,13 @@
-# 🚀 Selenium QA Automation Framework
+# Selenium QA Automation Framework
 
-## 📌 Overview
+## Overview
 
 This project is a **Selenium-based automation framework** built using **Java and TestNG**, following the **Page Object Model (POM)** design pattern.
 It supports **data-driven testing using JSON**, configuration management, and includes both **positive and negative test scenarios**.
 
 ---
 
-## 🔥 Key Highlights
+## Key Highlights
 
 * Designed using **Page Object Model (POM)** for scalability
 * Implemented **data-driven testing using JSON**
@@ -48,14 +48,14 @@ src
 
 ---
 
-## 🧪 Test Scenarios
+##  Test Scenarios
 
 * ✅ Valid Login Test
 * ❌ Locked User Negative Test
 
 ---
 
-## ▶️ How to Run
+## ▶ How to Run
 
 ### Run using TestNG
 
